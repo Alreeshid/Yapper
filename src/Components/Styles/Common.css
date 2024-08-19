@@ -1,0 +1,20 @@
+/*This file should primarily be referenced with future Dark/Light mode functionality*/
+
+body{
+    background-color: rgb(255, 220, 196);
+    color: rgb(84, 23, 0);
+}
+
+.horizontal-nav{
+    display: inline;
+    /*this makes all list items in a single line, unless another row is added.*/
+    height: 5%;
+    margin:auto;
+    margin-top: 0%;
+    width:max-content;
+}
+
+.horizontal-nav-button{
+    width: auto;
+    background-color: aqua;
+}

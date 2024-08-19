@@ -1,0 +1,13 @@
+.hNav{
+    display: inline;
+    /*this makes all list items in a single line, unless another row is added.*/
+    height: 5%;
+    margin:auto;
+    margin-top: 0%;
+    width:max-content;
+}
+
+.hNavButton{
+    width: auto;
+    background-color: aqua;
+}
