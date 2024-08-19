@@ -15,7 +15,7 @@ function Homepage() {
       <ol>
         <li>Allow writers to streamline Character/Setting creation, based around answering a series of questions.
           See demo <a href='' className="">here</a>.</li>
-        <li>Provide a structured format for writing poems such as haiku.</li>
+        <li>Provie a structured format for writing poems such as haiku.</li>
         <li>Contain a low-fidelity music player allowing users to relax while writing, without impacting performance.</li>
         <li>Allow users to save drafts, and export their works into .txt or .docx/.pdf files.</li>
         <li>Improve the writing skills of even the least experienced Writers!</li>
