@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@vercel/kv": "^2.0.0",
+    "jodit": "^4.2.27",
+    "mongosh": "^2.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
