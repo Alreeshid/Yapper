@@ -1,13 +1,9 @@
-.hNav{
-    display: inline;
-    /*this makes all list items in a single line, unless another row is added.*/
-    height: 5%;
-    margin:auto;
-    margin-top: 0%;
-    width:max-content;
+.navBarContainer{
+    border: 5px black;
 }
 
-.hNavButton{
-    width: auto;
-    background-color: aqua;
+.navBarList{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
