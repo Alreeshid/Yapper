@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import '/src/Components/Styles/Common.css'
-import '/src/Components/Styles/Navbar.css'
 /*
     The nav-bar component - will have different style options depending on the user and if
     said user is logged in.
@@ -13,13 +11,16 @@ function Navbar() {
     //console.log("var location= " + location);
 
     return(
-        <>
-            <ul className={ Navbar.hNav}>
-                <li className={Navbar.hNavButton}>
-                    Button 1   
-                </li>
-            </ul>
-        </>
+        <header className='navContainer'>
+            <nav>
+                <img className='navLogo'></img>
+                <ul>
+                    <li className=''><a href='#'>Home</a></li>
+                    <li className=''><a href='#'>Try a Demo</a></li>
+                </ul>
+            </nav>
+            <br></br>
+        </header>
     )
 
     }

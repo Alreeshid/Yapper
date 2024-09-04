@@ -1,0 +1,19 @@
+.welcome-banner {
+    margin: auto;
+    width: 20%;
+    text-align: center;
+}
+
+body{
+    margin: auto;
+    width: 60%;
+    top: 0;
+}
+
+.hNav{
+    border: 5px solid black;
+    list-style-type: none;
+    margin: auto;
+    display: flexbox;
+    color: brown;
+}

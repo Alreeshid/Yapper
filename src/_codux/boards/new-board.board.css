@@ -1,0 +1,55 @@
+.CUsersAburns10DocumentsGitHubYapperSrcCoduxBoardsNewBoardBoard_ul1 {
+  list-style-type: none;
+  float: left;
+  width: 100%;
+  border: 2px solid black;
+  background-color: #000000;
+  color: #ffffff;
+  grid-auto-flow: column;
+  display: grid;
+  grid-template-rows: 1;
+  text-align: center;
+  padding: 0px;
+}
+.navButton {
+  float: left;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  width: 200px;
+  display: block;
+  align-content: space-evenly;
+  padding: 10px;
+  background-color: #933e3e;
+  color: #fffdfd;
+  text-align: center;
+  box-shadow: inset 0 -1px 4px rgb(255, 68, 68);
+  opacity: 1;
+  cursor: inherit;
+}
+.navBar {
+  display: flex;
+  position: sticky;
+  top: 0px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 24px;
+  font-weight: 600;
+  list-style-type: none;
+  list-style-position: inside;
+  width: 100%;
+  flex-wrap: nowrap;
+  align-content: space-evenly;
+  justify-content: start;
+  opacity: 1;
+  left: 0px;
+}
+.navBarContainer {
+  align-content: start;
+  padding: 0px;
+  margin: 0px;
+  overflow: visible;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 0px;
+}

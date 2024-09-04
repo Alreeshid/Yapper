@@ -1,20 +1,50 @@
 /*This file should primarily be referenced with future Dark/Light mode functionality*/
 
+
 body{
-    background-color: rgb(255, 220, 196);
+    background-color: rgb(255, 192, 150);
     color: rgb(84, 23, 0);
 }
-
-.horizontal-nav{
-    display: inline;
-    /*this makes all list items in a single line, unless another row is added.*/
-    height: 5%;
-    margin:auto;
-    margin-top: 0%;
-    width:max-content;
+.root{
+    padding: 0;
+    margin: 0;
 }
 
-.horizontal-nav-button{
-    width: auto;
-    background-color: aqua;
+.navContainer{
+    background-color: brown;
+    position: fixed;
+    left:0;
+    top:0;
+    right:0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    padding-bottom: 20px;
+}
+.navContainer *{
+    display: inline;
+}
+
+.navContainer nav{
+    height:100%;
+
+}
+
+.navContainer li{
+    margin: 20px;
+}
+
+.navContainer li a{
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.navLogo{
+    height: 40px;
+}
+
+
+.hNav li{
+    
 }
