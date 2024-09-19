@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Navbar from './Components/Navbar'
-import DemoPage from './Components/demo'
+import Homepage from './Components/Homepage'
 import '/src/Components/Styles/Homepage.css'
 import '/src/Components/Styles/Common.css'
 
@@ -13,6 +13,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
     <br></br>
-    <DemoPage />
+    <Homepage />
   </StrictMode>,
 )
