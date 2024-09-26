@@ -23,10 +23,24 @@ export async function getUser(id){
 }
 
 export async function makeUser(obj){
+    const response = await axios.post(`${URL}/Users`, obj)
+    if(response.status === 200){
+        return response.data
+    }
+    else{
+        return response
+    }
     
 }
 
 export async function updateUserPosts(id, obj){
+    const response = await axios.put(`${URL}/Users${id}`, obj)
+    if(response.status === 200){
+        return response.data
+    }
+    else{
+        return response
+    }
     
 }
 
