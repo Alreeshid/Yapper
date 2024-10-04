@@ -1,0 +1,103 @@
+[
+  {
+    "level": "h2",
+    "styles": "#styles:,text-3xl dark:text-center dark:h-auto dark:my-[12px] dark:text-[2.6em]",
+    "content": "In this Demo, You'll make a character using Yapper\n",
+    "_type": "Heading",
+    "_id": "cfrCjm",
+    "_parent": null
+  },
+  {
+    "styles": "#styles:,overflow-x-auto whitespace-nowrap dark:text-center dark:mx-auto",
+    "tag": "div",
+    "backgroundImage": "",
+    "_type": "Box",
+    "_id": "eqpuCx",
+    "_name": "Box"
+  },
+  {
+    "content": "Short(~15 Questions)",
+    "styles": "#styles:,inline-flex h-12 items-center whitespace-nowrap rounded-t-md border border-b-0 border-gray-300 px-4 py-2 text-center text-sm text-gray-700 focus:outline-none sm:text-base dark:border-gray-500 dark:text-white",
+    "icon": "",
+    "iconSize": 24,
+    "iconPos": "order-last",
+    "_type": "Button",
+    "_id": "qqzApu",
+    "_parent": "eqpuCx"
+  },
+  {
+    "content": "Medium(~25 Questions)",
+    "styles": "#styles:,cursor-base inline-flex h-12 items-center whitespace-nowrap border-b border-gray-300 bg-transparent px-4 py-2 text-center text-sm text-gray-700 hover:border-gray-400 focus:outline-none sm:text-base dark:border-gray-500 dark:text-white dark:hover:border-gray-300",
+    "icon": "",
+    "iconSize": 24,
+    "iconPos": "order-last",
+    "_type": "Button",
+    "_id": "mmxxCk",
+    "_parent": "eqpuCx"
+  },
+  {
+    "content": "Long(~40 questions)",
+    "styles": "#styles:,cursor-base inline-flex h-12 items-center whitespace-nowrap border-b border-gray-300 bg-transparent px-4 py-2 text-center text-sm text-gray-700 hover:border-gray-400 focus:outline-none sm:text-base dark:border-gray-500 dark:text-white dark:hover:border-gray-300",
+    "icon": "",
+    "iconSize": 24,
+    "iconPos": "order-last",
+    "_type": "Button",
+    "_id": "favfgc",
+    "_parent": "eqpuCx"
+  },
+  {
+    "styles": "#styles:,",
+    "content": "<p>Select the number of questions you want - depending on how In-Depth you'd like to make</p>",
+    "_type": "RichText",
+    "_id": "dkhcft"
+  },
+  {
+    "styles": "#styles:,bg-gray-900 h-0.5 py-2 my-1",
+    "_type": "Divider",
+    "_id": "gmaspc"
+  },
+  {
+    "styles": "#styles:,dark:h-auto dark:w-[82%] dark:mx-auto",
+    "action": "/api/form/submit",
+    "errorMessage": "<p>Something went wrong. Please try again</p>",
+    "successMessage": "<p>Thank you for your submission.</p>",
+    "_type": "Form",
+    "_id": "qapyCB"
+  },
+  {
+    "_type": "@chai/seo-settings",
+    "_value": {}
+  },
+  {
+    "_type": "@chai/branding-options",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/theme-configuration",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/page-ai-context",
+    "_value": ""
+  }
+]

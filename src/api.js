@@ -1,5 +1,5 @@
 import axios from 'axios'
-const URL = "http:/localhost:3000"
+const URL = "http://localhost:3000"
 
 export async function getUsers(){
     //equal to http:/localhost:3000/Users
@@ -8,7 +8,8 @@ export async function getUsers(){
         return response.data
     }
     else{
-        return
+        response = "Nope"
+        return response
     }
 }
 
@@ -22,7 +23,7 @@ export async function getUser(id){
     }
 }
 
-export async function makeUser(obj){
+export async function createUser(obj){
     const response = await axios.post(`${URL}/Users`, obj)
     if(response.status === 200){
         return response.data
@@ -33,7 +34,7 @@ export async function makeUser(obj){
     
 }
 
-export async function updateUserPosts(id, obj){
+export async function updateUser(id, obj){
     const response = await axios.put(`${URL}/Users${id}`, obj)
     if(response.status === 200){
         return response.data

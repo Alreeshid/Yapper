@@ -16,7 +16,7 @@ function Navbar() {
                 <img className='navLogo'></img>
                 <ul>
                     <li className=''><a href='./index.html'>Home</a></li>
-                    <li className=''><a href='.\src\Components\demo.jsx'>Try a Demo</a></li>
+                    <li className=''><a href='./src/Pages/demo.html'>Try a Demo</a></li>
                 </ul>
             </nav>
             <br></br>

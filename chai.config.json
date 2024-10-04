@@ -1,0 +1,13 @@
+{
+  "theme": {
+    "bodyFont": "Inter",
+    "headingFont": "Inter",
+    "roundedCorners": 8,
+    "primaryColor": "#0073fb",
+    "secondaryColor": "#f002b8",
+    "bodyBgDarkColor": "#031022",
+    "bodyBgLightColor": "#fcfcfc",
+    "bodyTextDarkColor": "#ffffff",
+    "bodyTextLightColor": "#000000"
+  }
+}
