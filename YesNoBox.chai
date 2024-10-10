@@ -1,0 +1,115 @@
+[
+  {
+    "_id": "tjfeyC",
+    "_type": "Box",
+    "tag": "div",
+    "_name": "Box",
+    "styles_attrs": {
+      "className": "dark:mx-auto items-center flex flex-col"
+    },
+    "styles": "#styles:,"
+  },
+  {
+    "_id": "fCCoic",
+    "_parent": "tjfeyC",
+    "_type": "Paragraph",
+    "content": " Question ",
+    "styles_attrs": {
+      "className": "dark:h-auto dark:text-center dark:font-bold dark:text-[1.7em] order-0 dark:w-[100%] break-words"
+    },
+    "styles": "#styles:,"
+  },
+  {
+    "_type": "Box",
+    "_id": "wsfiAD",
+    "styles": "#styles:,dark:m-[0%] dark:mx-[20px] dark:p-[5px] dark:w-[20%]",
+    "tag": "div",
+    "backgroundImage": "",
+    "_parent": "tjfeyC"
+  },
+  {
+    "_type": "Radio",
+    "_id": "pydikf",
+    "styles": "#styles:,flex items-center w-max gap-x-2 float-left dark:mx-[20%]",
+    "fieldName": "radioQ",
+    "label": "Yes",
+    "checked": false,
+    "required": false,
+    "_parent": "wsfiAD"
+  },
+  {
+    "_type": "Radio",
+    "_id": "ppvfBk",
+    "styles": "#styles:,flex items-center w-max gap-x-2 dark:mx-[20%]",
+    "fieldName": "radioQ",
+    "label": "No",
+    "checked": false,
+    "required": false,
+    "_parent": "wsfiAD"
+  },
+  {
+    "_id": "avbona",
+    "_parent": "tjfeyC",
+    "_type": "Box",
+    "tag": "div",
+    "_name": "Box",
+    "styles_attrs": {
+      "className": "dark:mx-[3em] dark:h-auto dark:w-auto"
+    },
+    "styles": "#styles:,"
+  },
+  {
+    "_id": "xypfjw",
+    "_parent": "avbona",
+    "_type": "Button",
+    "styles_attrs": {
+      "className": "text-white bg-primary px-4 py-2 rounded-global flex items-center float-left dark:m-[1em] dark:bg-secondary-500",
+      "type": "button"
+    },
+    "styles": "#styles:,"
+  },
+  {
+    "_id": "fqnCDc",
+    "_parent": "xypfjw",
+    "_type": "Span",
+    "tag": "span",
+    "styles": "#styles:,",
+    "content": "Next Question"
+  },
+  {
+    "_type": "@chai/seo-settings",
+    "_value": {}
+  },
+  {
+    "_type": "@chai/branding-options",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/theme-configuration",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/page-ai-context",
+    "_value": ""
+  }
+]

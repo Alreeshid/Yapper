@@ -1,0 +1,91 @@
+[
+  {
+    "_id": "mAwqaq",
+    "_type": "Box",
+    "tag": "div",
+    "_name": "Box",
+    "styles": "#styles:,dark:mx-auto items-center flex flex-col"
+  },
+  {
+    "_id": "CmDnDr",
+    "_parent": "mAwqaq",
+    "_type": "Paragraph",
+    "content": " Question ",
+    "styles": "#styles:,dark:h-auto dark:text-center dark:font-bold dark:text-[1.7em] order-0 dark:w-[100%] break-words"
+  },
+  {
+    "_type": "Select",
+    "_id": "ugbtap",
+    "styles": "#styles:,",
+    "fieldName": "select",
+    "showLabel": false,
+    "inputStyles": "#styles:,w-full p-1",
+    "label": "Label",
+    "placeholder": "Placeholder",
+    "required": false,
+    "_multiple": false,
+    "options": [],
+    "_parent": "mAwqaq"
+  },
+  {
+    "_id": "lwDDdc",
+    "_parent": "mAwqaq",
+    "_type": "Box",
+    "tag": "div",
+    "_name": "Box",
+    "styles": "#styles:,dark:mx-[3em] dark:h-auto dark:w-auto"
+  },
+  {
+    "_id": "prqpfo",
+    "_parent": "lwDDdc",
+    "_type": "Button",
+    "styles_attrs": {
+      "type": "button"
+    },
+    "styles": "#styles:,text-white bg-primary px-4 py-2 rounded-global flex items-center float-left dark:m-[1em] dark:bg-secondary-500"
+  },
+  {
+    "_id": "qepszd",
+    "_parent": "prqpfo",
+    "_type": "Span",
+    "tag": "span",
+    "styles": "#styles:,",
+    "content": "Next Question"
+  },
+  {
+    "_type": "@chai/seo-settings",
+    "_value": {}
+  },
+  {
+    "_type": "@chai/branding-options",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/theme-configuration",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/page-ai-context",
+    "_value": ""
+  }
+]

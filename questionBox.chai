@@ -7,25 +7,51 @@
     "_id": "xjwddA"
   },
   {
-    "styles": "#styles:,dark:h-auto dark:text-center dark:font-bold dark:text-[1.7em] order-0 dark:w-[100%]",
-    "content": "Question Text",
+    "styles": "#styles:,dark:h-auto dark:text-center dark:font-bold dark:text-[1.7em] order-0 dark:w-[100%] break-words",
+    "content": "Question",
     "_type": "Paragraph",
     "_id": "Dyynwi",
     "_parent": "xjwddA"
   },
   {
-    "styles": "#styles:,dark:w-[70%] dark:m-auto dark:mx-auto dark:p-[4px] dark:h-[2em] dark:text-left dark:text-[1.3em] order-1",
-    "fieldName": "input",
-    "inputType": "text",
-    "value": "",
+    "_type": "TextArea",
+    "_id": "bnpusv",
+    "fieldName": "textarea",
     "showLabel": false,
+    "styles": "#styles:,dark:h-auto dark:w-[100%]",
     "inputStyles": "#styles:,w-full p-1",
     "label": "Label",
     "placeholder": "Placeholder",
-    "required": false,
-    "_type": "Input",
-    "_id": "evBCvg",
+    "_rows": 1,
     "_parent": "xjwddA"
+  },
+  {
+    "_type": "Box",
+    "_id": "ecoorD",
+    "styles": "#styles:,dark:mx-[3em] dark:h-auto dark:w-auto",
+    "tag": "div",
+    "backgroundImage": "",
+    "_parent": "xjwddA"
+  },
+  {
+    "_type": "Button",
+    "_id": "bpzfzz",
+    "content": "Next Question",
+    "styles": "#styles:,text-white bg-primary px-4 py-2 rounded-global flex items-center float-left dark:m-[1em] dark:bg-secondary-500",
+    "icon": "",
+    "iconSize": 24,
+    "iconPos": "order-last",
+    "_parent": "ecoorD"
+  },
+  {
+    "_type": "Button",
+    "_id": "CpcvhB",
+    "content": "AI Autofill",
+    "styles": "#styles:,text-white bg-primary px-4 py-2 rounded-global flex items-center float-right dark:p-[0.5em] dark:m-[1em] dark:bg-orange-500",
+    "icon": "",
+    "iconSize": 24,
+    "iconPos": "order-last",
+    "_parent": "ecoorD"
   },
   {
     "_type": "@chai/seo-settings",

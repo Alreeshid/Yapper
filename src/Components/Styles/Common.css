@@ -13,41 +13,24 @@ body{
     margin: 0;
 }
 */
-.navContainer{
-    background-color: brown;
-    position: fixed;
-    left:0;
+.navBar{
+    position: top;
     top:0;
-    right:0;
-    height: 40px;
+    width: 100%;
+    height:auto;
     display: flex;
-    align-items: center;
-
-    padding-bottom: 20px;
-}
-.navContainer *{
-    display: inline;
+    justify-content: space-between;
+    background-color: brown;
 }
 
-.navContainer nav{
-    height:100%;
-
-}
-
-.navContainer li{
-    margin: 20px;
-}
-
-.navContainer li a{
+.navItem{
+    padding: 1%;
     color: antiquewhite;
-    text-decoration: none;
+    margin:5px;
+    
 }
 
 .navLogo{
     height: 40px;
 }
 
-
-.hNav li{
-    
-}

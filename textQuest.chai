@@ -1,0 +1,76 @@
+[
+  {
+    "_type": "Box",
+    "_id": "ituzxs",
+    "styles": "#styles:,",
+    "tag": "div",
+    "backgroundImage": ""
+  },
+  {
+    "_type": "Form",
+    "_id": "qocuBa",
+    "styles": "#styles:,",
+    "action": "/api/form/submit",
+    "errorMessage": "<p>Something went wrong. Please try again</p>",
+    "successMessage": "<p>Thank you for your submission.</p>",
+    "_parent": "ituzxs"
+  },
+  {
+    "_type": "Heading",
+    "_id": "sbqqdl",
+    "level": "h3",
+    "styles": "#styles:,text-3xl dark:m-auto dark:text-center dark:font-bold",
+    "content": "QT",
+    "_parent": "qocuBa"
+  },
+  {
+    "_type": "Input",
+    "_id": "zvnCCh",
+    "styles": "#styles:,",
+    "fieldName": "input",
+    "inputType": "text",
+    "value": "",
+    "showLabel": false,
+    "inputStyles": "#styles:,w-full p-1",
+    "label": "Label",
+    "placeholder": "Placeholder",
+    "required": false,
+    "_parent": "qocuBa"
+  },
+  {
+    "_type": "@chai/seo-settings",
+    "_value": {}
+  },
+  {
+    "_type": "@chai/branding-options",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/theme-configuration",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/page-ai-context",
+    "_value": ""
+  }
+]
