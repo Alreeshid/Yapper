@@ -122,8 +122,8 @@ function DemoPage() {
         {shortList.map((question) => {
           //questNumList += {question}
           let count = 1;
-          if(count == shortList.length){
-            return(<h1>End of Quiz!</h1>)
+          if(count+1 == shortList.length){
+            alert("End of questionnaire")
           }
           else if (question.qType === "text") {
             return (
