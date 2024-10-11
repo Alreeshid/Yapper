@@ -122,10 +122,10 @@ function DemoPage() {
         {shortList.map((question) => {
           //questNumList += {question}
           let count = 1;
-          if(count+1 == shortList.length){
-            alert("End of questionnaire")
-          }
-          else if (question.qType === "text") {
+          //if(count+1 == shortList.length){
+          //  alert("End of questionnaire")
+          //}
+          /*else*/ if (question.qType === "text") {
             return (
               <>
                 <div key={question.qNum} className="mightHide dark:mx-auto items-center flex flex-col" id={question.qId}>
