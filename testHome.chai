@@ -1128,6 +1128,80 @@
     "_parent": "ijlpmt"
   },
   {
+    "styles": "#styles:,",
+    "tag": "footer",
+    "backgroundImage": "",
+    "_type": "Box",
+    "_id": "lihdqi",
+    "_name": "Footer"
+  },
+  {
+    "styles": "#styles:,container mx-auto px-6 py-8",
+    "tag": "div",
+    "backgroundImage": "",
+    "_type": "Box",
+    "_id": "nsjyls",
+    "_name": "Box",
+    "_parent": "lihdqi"
+  },
+  {
+    "styles": "#styles:,my-10 border-gray-200 dark:border-gray-700",
+    "_type": "Divider",
+    "_id": "givxyy",
+    "_parent": "nsjyls"
+  },
+  {
+    "styles": "#styles:,flex flex-col items-center sm:flex-row sm:justify-between",
+    "tag": "div",
+    "backgroundImage": "",
+    "_type": "Box",
+    "_id": "ABdjbz",
+    "_name": "Box",
+    "_parent": "nsjyls"
+  },
+  {
+    "styles": "#styles:,text-sm text-gray-500",
+    "content": "Logos created by Freepix, with core website components modified from Chai Studio.",
+    "_type": "Paragraph",
+    "_id": "gxDazx",
+    "_parent": "ABdjbz"
+  },
+  {
+    "styles": "#styles:,-mx-2 mt-3 flex sm:mt-0",
+    "tag": "div",
+    "backgroundImage": "",
+    "_type": "Box",
+    "_id": "bjDuai",
+    "_name": "Box",
+    "_parent": "ABdjbz"
+  },
+  {
+    "styles": "#styles:,mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300",
+    "content": " Privacy ",
+    "link": {
+      "href": "#"
+    },
+    "_type": "Link",
+    "_id": "yejnql",
+    "_parent": "bjDuai",
+    "styles_attrs": {
+      "aria-label": "Reddit"
+    }
+  },
+  {
+    "styles": "#styles:,mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300",
+    "content": " Cookies ",
+    "link": {
+      "href": "#"
+    },
+    "_type": "Link",
+    "_id": "BkAmzu",
+    "_parent": "bjDuai",
+    "styles_attrs": {
+      "aria-label": "Reddit"
+    }
+  },
+  {
     "_type": "@chai/seo-settings",
     "_value": {
       "seoTitle": "",
@@ -1141,6 +1215,35 @@
     }
   },
   {
-    "_type": "@chai/page-ai-context"
+    "_type": "@chai/branding-options",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/theme-configuration",
+    "_value": {
+      "bodyFont": "Inter",
+      "headingFont": "Inter",
+      "roundedCorners": 5,
+      "primaryColor": "#570df8",
+      "secondaryColor": "#f002b8",
+      "bodyBgDarkColor": "#031022",
+      "bodyBgLightColor": "#fcfcfc",
+      "bodyTextDarkColor": "#ffffff",
+      "bodyTextLightColor": "#000000"
+    }
+  },
+  {
+    "_type": "@chai/page-ai-context",
+    "_value": ""
   }
 ]

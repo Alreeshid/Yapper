@@ -13,6 +13,9 @@ body{
     margin: 0;
 }
 */
+.mightHide{
+    display: none;
+}
 .navBar{
     position: top;
     top:0;

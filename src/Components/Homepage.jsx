@@ -19,6 +19,7 @@ function Homepage() {
 
   return (
     <>
+    <div className="bg-rose-700">
       <br></br>
       <header>
         <div className="lg:flex">
@@ -597,6 +598,36 @@ function Homepage() {
           </div>
         </div>
         </section>
+        <br></br><hr></hr>
+        <div className="container mx-auto px-6 py-8">
+      <hr className="my-10 border-gray-200 dark:border-gray-700" />
+      <div className="flex flex-col items-center sm:flex-row sm:justify-between">
+        <p className="text-sm text-gray-500">
+          Logos created by Freepix, with core website components modified from Chai Studio.
+        </p>
+        <div className="-mx-2 mt-3 flex sm:mt-0">
+          <a
+            className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
+            aria-label="Reddit"
+            href="#"
+            target="_self">
+            
+            Privacy
+          </a>
+          <a
+            className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
+            aria-label="Reddit"
+            href="#"
+            target="_self">
+            
+            Cookies
+          </a>
+        </div>
+      </div>
+    </div>
+        </div>
+        
+        
     </>
   )
 }
