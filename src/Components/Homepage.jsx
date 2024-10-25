@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import Navbar from "./Navbar"
+import { getUsers } from '../api'
+
 //import "Common.css"
 
 //List of pages to make
@@ -15,10 +17,23 @@ Contact page for support or inquiries
 
 function Homepage() {
 //This functions as the landing page
-//Has a section for recent community posts sorted by recency  
+//Has a section for recent community posts sorted by recency 
+
+const [data, setPageData] = useState([])
+
+  useEffect(() =>{
+      async function loadPageData(){
+        const data = await getUsers()//placeholder for testing
+        //alert(JSON.stringify(data))
+        //Confirmed connection
+        setPageData(data)
+      }
+      loadPageData()
+  }, [])
 
   return (
     <>
+
     <div className="bg-rose-700">
       <br></br>
       <header>
@@ -33,6 +48,15 @@ function Homepage() {
                 Yapper is a writing tool designed to help creatives come up with ideas for their writing, and to keep
                 their ideas consistent. Whether you're an experienced writer or simply want  to build up loose ideas,
                 Yapper is here to help!
+                {data.map((user) =>{
+                  {/*alert(user)*/}
+                  return(
+                    
+                    <>
+                      <span>{JSON.stringify(user)}</span>
+                    </>
+                  )
+                })}
               </p>
               <div className="mt-6 flex flex-col space-y-3 lg:flex-row lg:space-y-0">
                 <a

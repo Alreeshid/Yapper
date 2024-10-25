@@ -3,7 +3,9 @@ require("dotenv").config({path: "config.env"})
 
 //async function main() {
     const Db = process.env.ATLAS_URI
-    const client = new MongoClient(Db)
+    const Vb = process.env.VERCEL_URI
+    //for the vercel app
+    const client = new MongoClient(Vb)
 
     let database
 

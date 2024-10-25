@@ -30,6 +30,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Login" element={<SignIn />} />
       </Route>
 
+      <Route path='/DemoOutPut'></Route>
+
 
     </Routes>
   </Router>
