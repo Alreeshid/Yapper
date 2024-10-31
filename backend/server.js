@@ -6,6 +6,7 @@ const express = require("express")
 const cors = require("cors")
 
 const routes = require("./postRoutes")
+// const demoData = require("./demoDataRoutes")
 
 const app = express()
 const PORT = 3000
@@ -13,6 +14,7 @@ const PORT = 3000
 app.use(cors()) //app,use mounts middleware
 app.use(express.json())//parses requests in a json format
 app.use(routes)
+// app.use(demoData)
 
 //uses arrow notation for the second field
 app.listen(PORT, () =>{

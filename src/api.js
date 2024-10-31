@@ -8,7 +8,7 @@ export async function getUsers(){
         return response.data
     }
     else{
-        response = "Nope"
+        //response = "Nope"
         return response
     }
 }
@@ -52,5 +52,15 @@ export async function deleteUser(id){
     }
     else{
         return response
+    }
+}
+
+export async function verifyUser(user){
+    const response = await axios.post(`${URL}/Users/login`, user)
+    if(response.data.success){
+        return response.data.token
+    }
+    else{
+        throw new Error(response.status.text)
     }
 }

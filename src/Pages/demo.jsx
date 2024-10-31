@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Navbar from '../Components/Navbar';
 import TextQuest from '../Components/TextQuest';
@@ -26,7 +28,7 @@ function DemoPage() {
       })
     })
   }) */
-
+  const navigate = useNavigate();
   const [quiz, setQuiz] = useState(0);
   const [questions, setQuestions] = useState([]);//array of question components
   const [questionData, setQuestionData] = useState([{
@@ -34,14 +36,14 @@ function DemoPage() {
     Answer: "Test"
   }])// array of actual question data that will be exported to a new page when done
   //doesn't want to work, so modifying it here:
-  let userInput = [{qNum: 0, Answer: "Testing!"}]
+  let userInput = [{ qNum: 0, Answer: "Testing!" }]
   let questList = []//selected questionnaire
 
   //const [tempData, setTempData] = useState([])//duplicates of questions to save progress when re-rendering
 
   let count = 0; //actual question number
   let isOver = false; //is the quiz at its end
-  
+
 
   //let questNumList = []
 
@@ -52,20 +54,28 @@ function DemoPage() {
     //console.log(shortList[0])
 
     setQuiz(e)
-    if(e == "short"){setQuestions([<TextQuest question={shortList[0]}/>, <NextButton />])
+    if (e == "short") {
+      setQuestions([<TextQuest question={shortList[0]} />, <NextButton />])
       questList = shortList
     }
-      else if(e.name == "inter"){}
-      else if(e.name == "long"){}
-    
+    else if (e.name == "inter") {
+      setQuestions([<TextQuest question={shortList[0]} />, <NextButton />])
+      questList = shortList
+     }
+    else if (e.name == "long") {
+      setQuestions([<TextQuest question={shortList[0]} />, <NextButton />])
+      questList = shortList
+     }
+
     //alert(JSON.stringify(questions[0]))
     count = 1;
   }
 
-  function NextButton(){
-    return (
-      <>
-        <div className="dark:mx-[3em] dark:h-auto dark:w-auto">
+  function NextButton() {
+    if (!isOver) {
+      return (
+        <>
+          <div className="dark:mx-[3em] dark:h-auto dark:w-auto">
             <button
               className="nextQuest text-black bg-green-600 px-4 py-2 rounded-global flex items-center float-left dark:m-[1em]"
               type="button"
@@ -79,25 +89,26 @@ function DemoPage() {
               <span>AI Autofill</span>
             </button>
           </div>
-      </>
-    )
-  }
-  function EndOfQuizButton(){
-      return (
-        <>
-          <div className="dark:mx-[3em] dark:h-auto dark:w-auto">
-              <button
-                className="nextQuest text-black bg-red-400 px-4 py-2 rounded-global flex items-center float-left dark:m-[1em] dark:bg-secondary-500"
-                type="button"
-                onClick={handleNextQuestion}>
-                <br></br>
-                <span>End Questionnaire</span>
-              </button>
-            </div>
         </>
       )
     }
-  
+    else {
+
+      return (
+        <>
+          <div className="dark:mx-[3em] dark:h-auto dark:w-auto">
+            <button
+              className="nextQuest text-black bg-red-400 px-4 py-2 rounded-global flex items-center float-left dark:m-[1em] dark:bg-secondary-500"
+              type="button"
+              onClick={endQuest}>
+              <br></br>
+              <span>End Questionnaire</span>
+            </button>
+          </div>
+        </>
+      )
+    }
+  }
 
 
   function handleNextQuestion() {
@@ -105,65 +116,74 @@ function DemoPage() {
       First, check if the last question has been reached, then display an 
       end quiz button or continue with the next question
       User answers should be saves in each question's qResponse variable.
-    */ 
+    */
+    if (count == (questList.length - 1))
+      isOver = true
 
     //check if dropdown selector: confirmed working
-    if(questList[count-1].qType == "choice"){
-      answer = document.getElementById(count +"Selected").innerText
-    } 
-    else if(questList[count-1].qType == "yesNo"){
-      if(document.getElementById(count+"N").checked)
-        answer = document.getElementById(count+"N").value
-      else if(document.getElementById(count+"Y").checked)
-        answer = document.getElementById(count+"Y").value
+    if (questList[count - 1].qType == "choice") {
+      answer = document.getElementById(count + "Selected").innerText
+    }
+    else if (questList[count - 1].qType == "yesNo") {
+      if (document.getElementById(count + "N").checked)
+        answer = document.getElementById(count + "N").value
+      else if (document.getElementById(count + "Y").checked)
+        answer = document.getElementById(count + "Y").value
       else
         answer = "Chose not to Answer"
     }
-    
-    else{ var answer = document.getElementById("qResponse" + count).value}
+
+    else { var answer = document.getElementById("qResponse" + count).value }
     //console.log("Response: " + answer)
 
     //has a weird bud, can't find the actual output this makes
-    userInput = userInput.concat({qNum: count, Answer: answer})
-    
-    console.log(count)
-    console.log(userInput[count].Answer)
-    if(questList[count].qType == "text"){
+    userInput = userInput.concat({ qNum: count,qText: questList[count].qText, Answer: answer })
+    //this is an array of answers, with the question number, the question, and the user's response.
+    //console.log(count)
+    //console.log(userInput)
+
+    //next, I need to check if the current question has a qFollowup array.
+
+    if (questList[count].qType == "text") {
       setQuestions(
         [
           <>
-          {...questions}
-          <TextQuest question={questList[count]}/>
-          <NextButton />
+            {...questions}
+            <TextQuest question={questList[count]} />
+            <NextButton />
           </>
         ]
       )
     }
-    else if(questList[count].qType == "choice"){
+    else if (questList[count].qType == "choice") {
       setQuestions(
         [
           <>
-          {...questions}
-          <SelectorQuest question={questList[count]}/>,
-          <NextButton />
+            {...questions}
+            <SelectorQuest question={questList[count]} />,
+            <NextButton />
           </>
         ]
       )
     }
-    else if(questList[count].qType == "yesNo"){
+    else if (questList[count].qType == "yesNo") {
       setQuestions(
         [
           <>
-          {...questions}
-          <YesNoQuest question={questList[count]}/>,
-          <NextButton />
+            {...questions}
+            <YesNoQuest question={questList[count]} />,
+            <NextButton />
           </>
         ]
       )
     }
-    
-    
+
+
     count++
+  }
+  function endQuest(){
+    /*Take user's compiled info, and output it into a new page for them to copy/paste from*/
+    console.log(userInput)
   }
 
   function CacheResponses(qNum, qValue) {
@@ -173,9 +193,13 @@ function DemoPage() {
 
   }
 
+  async function handleSubmit(){
+
+  }
+
   return (
     <><br></br>
-    
+
       <h2 className="text-3xl dark:text-center dark:h-auto dark:my-[12px] dark:text-[2.6em] text-center"  >
         In this Demo, You'll make a character using Yapper
       </h2>
@@ -193,20 +217,20 @@ function DemoPage() {
         Select the number of questions you want - depending on how In-Depth you'd like to make your character!</p>
       </div></div><hr className="bg-gray-900 h-0.5 py-2 my-1" />
 
-      <form id='questionnaire' method="post" action="/api/form/submit"
+      <form onSubmit={handleSubmit} id='questionnaire' method="post" action="/api/form/submit"
         className="dark:h-auto dark:w-[82%] dark:mx-auto"><div  >
         </div><input name="demoCharacter" type="hidden" value="Form" />
         <br></br>
         {questions}
 
-      
+
       </form></>
-      
+
     //{document.addEventListener('load')}
 
 
   );
 
-}
 
+}
 export default DemoPage

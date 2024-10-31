@@ -10,6 +10,7 @@ import '/src/Components/Styles/Common.css'
 import { HashRouter as Router, Routes, Route } from "react-router-dom"
 //Pages to route using Navbar/Buttons
 import DemoPage from "./Pages/demo"
+import DemoOutput from "./Pages/OutputDemo"
 import About from './Pages/about'
 import SignIn from './Pages/signIn'
 import Contact from './Pages/contact'
@@ -28,11 +29,13 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Demo" element={<DemoPage />} />
         <Route path="/About" element={<About />} />
         <Route path="/Login" element={<SignIn />} />
+        <Route path='/OutputDemo' element={<DemoOutput />}></Route>
       </Route>
 
-      <Route path='/DemoOutPut'></Route>
 
 
     </Routes>
   </Router>
 )
+//      
+//this will b eused later
