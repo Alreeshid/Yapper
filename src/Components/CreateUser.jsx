@@ -8,7 +8,7 @@ export function CreateUser() {
         email: "",
         password: "",
     })
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
     async function handleSubmit(e){
         e.preventDefault()
         let response = await createUser(user)//passes the created object that handleChange has been making

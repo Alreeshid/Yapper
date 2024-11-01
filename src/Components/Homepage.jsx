@@ -33,7 +33,7 @@ const [data, setPageData] = useState([])
 
   return (
     <>
-
+      {console.log(data[data.length-1])}
     <div className="bg-stone-400">
       <br></br>
       <header>
