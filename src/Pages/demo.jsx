@@ -35,7 +35,7 @@ function DemoPage() {
   const [questions, setQuestions] = useState([]);//array of question components
   const [questionData, setQuestionData] = useState([{}])// array of actual question data that will be exported to a new page when done
   //doesn't want to work, so modifying it here:
-  let userInput = [{ qNum: 0, Answer: "Testing!" }]
+  let userInput = [{}]
   let questList = []//selected questionnaire
 
   //const [tempData, setTempData] = useState([])//duplicates of questions to save progress when re-rendering

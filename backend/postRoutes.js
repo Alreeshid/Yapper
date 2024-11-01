@@ -133,7 +133,7 @@ postRoutes.route("/Users/login").post(verifyToken, async(request, response) => {
 //if they return a bad token.
 function verifyToken(request, response, next){
     //next=what needs to next be done, literally
-    const authHeaders = request.headers["Authorization"]
+    const authHeaders = request.headers["authorization"]
     const token = authHeaders && authHeaders.split(' ')[1]//takes away the 'Bearers 'part of the string
     if(!token){
         return response.status(401).json("Authentication invalid")

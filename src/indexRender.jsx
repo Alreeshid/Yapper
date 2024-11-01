@@ -14,13 +14,27 @@ import DemoOutput from "./Pages/OutputDemo"
 import About from './Pages/about'
 import SignIn from './Pages/signIn'
 import Contact from './Pages/contact'
+import { useEffect } from 'react'
+import axios from 'axios'
 //potential for the community page in the future, maybe only if logged in
 
 
 //this file takes the various components for the homepage and then attaches them to the homepage.
 // remember that <Router> represents <HashRouter>
 //for paths that require ids, use /pathLoc:id - with pathLoc being th page, such as an individual post
+
+//check if user Auth headers already exist on page load:
+
 createRoot(document.getElementById('root')).render(
+/*
+  useEffect(() =>{
+    let token = sessionStorage.getItem("User")
+    if(token){
+      axios.defaults.headers.common["authorization"] = `Bearer ${token}`
+    }
+  }, [])*/
+
+
   <Router>
     <Routes>
       <Route path="/" element={<Homepage />} />
