@@ -1,5 +1,6 @@
 import { createUser } from "../api"
 import { useState } from "react"
+//import { useNavigate } from "react-router-dom"
 
 export function CreateUser() {
     const [user, setUser] = useState({
@@ -7,12 +8,17 @@ export function CreateUser() {
         email: "",
         password: "",
     })
+    const navigate = useNavigate()
     async function handleSubmit(e){
         e.preventDefault()
         let response = await createUser(user)//passes the created object that handleChange has been making
-        console.log(response)
-        if(response.status !== 201){
-            alert("User account could not be created, Error: " + response.message)
+        //alert(JSON.stringify(response))
+        if(response.acknowledged != true){
+            alert("User account could not be created, Error: " + response.status)
+        }
+        else{
+            alert("Your account has been created!")
+            
         }
     }
 
