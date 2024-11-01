@@ -1,7 +1,8 @@
 import { verifyUser } from "../api"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-
+import axios from "axios"
+//axios makes calls for backed routes
 
 export function LoginComponent() {
     const [user, setUser] = useState({
@@ -17,7 +18,9 @@ export function LoginComponent() {
         //console.log(response)
         if(response){
             sessionStorage.setItem("User", response)
-            navigate("/Home") //replace with the Landing Page once it's made, and put it in the router
+            //next, set the response token to authenticate future axios requests
+            axios.defaults.headers.common["Authorization"] = `Bearer ${response}`
+            navigate("/Dashboard") //replace with the Landing Page once it's made, and put it in the router
         }
         else{
             alert("Login Failed")

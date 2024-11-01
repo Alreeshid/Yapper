@@ -14,7 +14,7 @@ const bcrypt = require("bcrypt") //for encrypting user passwords
 
 //1 Retrieve all
 //http://localhost:3000/users
-postRoutes.route("/Users").get( async(request, response) => {//asynce makes it wait until we get data returned
+postRoutes.route("/Users").get(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
     let data = await db.collection("Users").find({}).toArray()
     if(data.length > 0){
@@ -26,7 +26,7 @@ postRoutes.route("/Users").get( async(request, response) => {//asynce makes it w
 })
 
 //2 Retrieve one
-postRoutes.route("/Users/:id").get( async(request, response) => {//asynce makes it wait until we get data returned
+postRoutes.route("/Users/:id").get(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
     let data = await db.collection("Users").findOne({_id: new ObjectId(request.params.id)})
      
@@ -39,7 +39,7 @@ postRoutes.route("/Users/:id").get( async(request, response) => {//asynce makes 
 })
 
 //3 create one
-postRoutes.route("/Users").post( async(request, response) => {//asynce makes it wait until we get data returned
+postRoutes.route("/Users").post(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
 
     const hash = await bcrypt.hash(request.body.password, SALT_ROUNDS)
@@ -67,7 +67,7 @@ postRoutes.route("/Users").post( async(request, response) => {//asynce makes it 
 })
 
 //4 update one
-postRoutes.route("/Users/:id").put( async(request, response) => {//asynce makes it wait until we get data returned
+postRoutes.route("/Users/:id").put(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
     let mongoObject = {
         $set:{
@@ -85,14 +85,14 @@ postRoutes.route("/Users/:id").put( async(request, response) => {//asynce makes 
 })
 
 //5 delete one
-postRoutes.route("/Users/:id").delete( async(request, response) => {//asynce makes it wait until we get data returned
+postRoutes.route("/Users/:id").delete(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
     let data = await db.collection("Users").deleteOne({_id: new ObjectId(request.params.id)})
     response.json(data)
 })
 
 //6: Login Verification Route:
-postRoutes.route("/Users/login").post( async(request, response) => {//asynce makes it wait until we get data returned
+postRoutes.route("/Users/login").post(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
 
     const hash = await bcrypt.hash(request.body.password, SALT_ROUNDS)
@@ -115,7 +115,7 @@ postRoutes.route("/Users/login").post( async(request, response) => {//asynce mak
             such as admin accounts - and prevents a user from altering their login info in their session states
             (done through the Application tab in the inspector)
             */
-            const token = jwt.sign(user, process.env.SECRET_KEY, {expiresIn: 15})
+            const token = jwt.sign(user, process.env.SECRET_KEY, {expiresIn: "8h"})
             response.json({success: true, token})
         }
         else{
@@ -128,5 +128,25 @@ postRoutes.route("/Users/login").post( async(request, response) => {//asynce mak
 
     }
 })
+
+//here's a function that's designed to authenticate user tokens - and prevent them access to certain pages/fields
+//if they return a bad token.
+function verifyToken(request, response, next){
+    //next=what needs to next be done, literally
+    const authHeaders = request.headers["Authorization"]
+    const token = authHeaders && authHeaders.split(' ')[1]//takes away the 'Bearers 'part of the string
+    if(!token){
+        return response.status(401).json("Authentication invalid")
+    }
+    jwt.verify(token, process.env.SECRET_KEY, (error, user)=>{
+        //if verify failed, it will return an error);
+        if(error){
+            return response.status(401).json("Authentication token invalid")
+        }
+        //if the token was valid:
+        request.body.user = user
+        next()
+    })
+}
 
 module.exports = postRoutes

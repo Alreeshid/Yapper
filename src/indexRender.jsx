@@ -26,10 +26,16 @@ createRoot(document.getElementById('root')).render(
       <Route path="/" element={<Homepage />} />
 
       <Route element={<Layout />}>
+      {/* 
+        This part of the router represents the actual pages that can be rendered - the navbar overlays on top 
+        as its own element, while the Layout component is then filled in with whatever component it's been
+        redirected to. Elements linked in the pageRouteData file are the only ones that are rendered on the
+        navbar, meaning that elements can be added to this for secretive use.
+       */}
         <Route path="/Demo" element={<DemoPage />} />
         <Route path="/About" element={<About />} />
         <Route path="/Login" element={<SignIn />} />
-        <Route path='/OutputDemo' element={<DemoOutput />}></Route>
+        <Route path='/DemoOutput' element={<DemoOutput />}></Route>
       </Route>
 
 

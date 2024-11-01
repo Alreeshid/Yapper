@@ -1,9 +1,8 @@
-
 function About() 
 {
     return(
 	<>
-    About
+        
     </>
     )
 }

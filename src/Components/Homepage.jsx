@@ -34,7 +34,7 @@ const [data, setPageData] = useState([])
   return (
     <>
 
-    <div className="bg-rose-700">
+    <div className="bg-stone-400">
       <br></br>
       <header>
         <div className="lg:flex">
@@ -44,19 +44,11 @@ const [data, setPageData] = useState([])
                 Welcome to 
                 <span className="text-primary-600 dark:text-primary-400">Yapper</span>
               </h2>
-              <p className="mt-4 text-sm text-gray-500 lg:text-base dark:text-gray-400">
+              <p className="mt-4 text-sm text-slate-800 lg:text-base">
                 Yapper is a writing tool designed to help creatives come up with ideas for their writing, and to keep
                 their ideas consistent. Whether you're an experienced writer or simply want  to build up loose ideas,
                 Yapper is here to help!
-                {data.map((user) =>{
-                  {/*alert(user)*/}
-                  return(
-                    
-                    <>
-                      <span>{JSON.stringify(user)}</span>
-                    </>
-                  )
-                })}
+                  
               </p>
               <div className="mt-6 flex flex-col space-y-3 lg:flex-row lg:space-y-0">
                 <a
@@ -82,7 +74,7 @@ const [data, setPageData] = useState([])
           </div>
           <div className="h-64 w-full lg:h-auto lg:w-1/2">
             <div className="h-full w-full bg-cover">
-              <div className="h-full w-full bg-black opacity-25"></div>
+              <div className="h-300 w-150 bg-black opacity-25"><img src='src\assets\freepik_MainPBanner.png'></img></div>
             </div>
           </div>
         </div>
