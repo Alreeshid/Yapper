@@ -11,7 +11,7 @@ export function CreateUser() {
         e.preventDefault()
         let response = await createUser(user)//passes the created object that handleChange has been making
         console.log(response)
-        if(response.status !== 200){
+        if(response.status !== 201){
             alert("User account could not be created, Error: " + response.message)
         }
     }
