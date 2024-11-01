@@ -24,13 +24,12 @@ function OutPut(){
     
     const listItems = data.map(quest =>   
         <>
-            <li>{quest.qNum}: {quest.qQuest}</li>
+            <li className="font-bold">{quest.qNum}: {quest.qQuest}</li>
             <li>Answer: {quest.Answer}</li>
             {console.log(quest)}
             <br></br>
         </>
      )
-        //Won't return anything, figure out why. Doesn't break the page
         
     return(
         <>
@@ -51,7 +50,7 @@ function OutPut(){
                 temporarily by returnign to this URL(see button below if you'd like to clear this cache).
                 If you take another demo quiz, this will be overwritten.
                 
-
+                <button onClick={()=>{localStorage.clear}}>Clear Cache</button>
             </p>
             <br></br> <hr></hr>
             
