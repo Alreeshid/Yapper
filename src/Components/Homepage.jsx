@@ -21,6 +21,7 @@ function Homepage() {
 
 const [data, setPageData] = useState([])
 
+/*
   useEffect(() =>{
       async function loadPageData(){
         const data = await getUsers()//placeholder for testing
@@ -30,10 +31,9 @@ const [data, setPageData] = useState([])
       }
       loadPageData()
   }, [])
-
+*/
   return (
     <>
-      {console.log(data[data.length-1])}
     <div className="bg-stone-400">
       <br></br>
       <header>

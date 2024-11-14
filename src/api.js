@@ -29,7 +29,7 @@ export async function createUser(obj){
         return response.data
     }
     else{
-        return response
+        return response.statusText
     }
     
 }

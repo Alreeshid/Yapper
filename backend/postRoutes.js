@@ -12,6 +12,9 @@ let postRoutes = express.Router();
 
 const bcrypt = require("bcrypt") //for encrypting user passwords
 
+/*Note: come back to EP 10 23:52 to see how to make posts for a comunity page. Maybe have users make 
+    questionnaires instead of sharing posts? Or just have a rudimentary community blog */
+
 //1 Retrieve all
 //http://localhost:3000/users
 postRoutes.route("/Users").get(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
@@ -38,8 +41,8 @@ postRoutes.route("/Users/:id").get(verifyToken, async(request, response) => {//a
     }
 })
 
-//3 create one
-postRoutes.route("/Users").post(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
+//3 create one user
+postRoutes.route("/Users").post(async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
 
     const hash = await bcrypt.hash(request.body.password, SALT_ROUNDS)
@@ -92,7 +95,7 @@ postRoutes.route("/Users/:id").delete(verifyToken, async(request, response) => {
 })
 
 //6: Login Verification Route:
-postRoutes.route("/Users/login").post(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
+postRoutes.route("/Users/login").post(async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
 
     const hash = await bcrypt.hash(request.body.password, SALT_ROUNDS)
@@ -115,7 +118,7 @@ postRoutes.route("/Users/login").post(verifyToken, async(request, response) => {
             such as admin accounts - and prevents a user from altering their login info in their session states
             (done through the Application tab in the inspector)
             */
-            const token = jwt.sign(user, process.env.SECRET_KEY, {expiresIn: "8h"})
+            const token = jwt.sign(user, process.env.SECRET_KEY) //, {expiresIn: "8h"}
             response.json({success: true, token})
         }
         else{
@@ -141,7 +144,7 @@ function verifyToken(request, response, next){
     jwt.verify(token, process.env.SECRET_KEY, (error, user)=>{
         //if verify failed, it will return an error);
         if(error){
-            return response.status(401).json("Authentication token invalid")
+            return response.status(403).json("Authentication token invalid")
         }
         //if the token was valid:
         request.body.user = user

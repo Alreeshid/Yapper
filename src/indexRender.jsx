@@ -16,6 +16,7 @@ import SignIn from './Pages/signIn'
 import Contact from './Pages/contact'
 import { useEffect } from 'react'
 import axios from 'axios'
+import Dashboard from './Pages/Dashboard'
 //potential for the community page in the future, maybe only if logged in
 
 
@@ -24,6 +25,10 @@ import axios from 'axios'
 //for paths that require ids, use /pathLoc:id - with pathLoc being th page, such as an individual post
 
 //check if user Auth headers already exist on page load:
+let home = <Homepage/>
+if(sessionStorage.getItem("User")){
+  home = <Dashboard />
+}
 
 createRoot(document.getElementById('root')).render(
 /*
@@ -37,7 +42,8 @@ createRoot(document.getElementById('root')).render(
 
   <Router>
     <Routes>
-      <Route path="/" element={<Homepage />} />
+      
+      <Route path="/" element={home} />
 
       <Route element={<Layout />}>
       {/* 

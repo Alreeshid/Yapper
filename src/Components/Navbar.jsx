@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { pageData } from './DataLists/PageRouteData';
 /*
     The nav-bar component - will have different style options depending on the user and if
@@ -11,6 +11,11 @@ function Navbar() {
     //var location = window.location.pathname;
     //location = location.split("/").pop();
     //console.log("var location= " + location);
+    const navigate = useNavigate()
+    function HandleLogout(){
+        sessionStorage.removeItem("User")
+        navigate("/")
+    }
 
     return(
             <div className="navBar">
@@ -24,6 +29,7 @@ function Navbar() {
                         </>
                     )
                 })}
+                <button onClick={HandleLogout} className = "navItem">Log Out</button>
                     
             </div>
     )
