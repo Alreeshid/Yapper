@@ -63,4 +63,10 @@ export async function verifyUser(user){
     else{
         throw new Error(response.status.text)
     }
+
+ 
 }
+
+export async function getAllCreations(){
+
+}   

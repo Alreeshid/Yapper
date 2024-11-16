@@ -4,7 +4,7 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getUser } from "../api"
-import jwt_decode from "jsonwebtoken"
+import * as jwtdecode from "jwt-decode"
 /*Variables*/
 
 
@@ -15,12 +15,17 @@ export default function Dashboard(){
     const nav = useNavigate()
     const [creations, setCreations] = useState([])
     const [user, setUser] = useState({})//object vs array
+    const jwt_decode = jwtdecode.jwtDecode
 
     useEffect(() =>{
         async function loadUserData(){
             //loads the user's creations and other info by decoding the auth token
             const token = sessionStorage.getItem("User")
             const decodedUser = jwt_decode(token)
+            console.log(JSON.stringify(decodedUser))
+            setUser(decodedUser)
+            //const allCreations = await getAllCreations
+            // const filtered posts = allCreations.filter() //ep 10 29:55
         }
         loadUserData()
     })
@@ -34,7 +39,7 @@ export default function Dashboard(){
 
     return(
     <>
-        <h1>decodedUser</h1>
+        <h1>Welcome {user.userName}</h1>
     </>
     )
 }
