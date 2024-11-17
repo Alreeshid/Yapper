@@ -28,7 +28,7 @@ function SignIn() {
                 >
 
                     <LoginComponent />
-                    <Button variant="outline"
+                    <Button variant=""
                         onClick={changeLoginType}>Don't have an account? Create one now!
                     </Button>
                 </div>
