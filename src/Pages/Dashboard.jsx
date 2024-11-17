@@ -1,12 +1,9 @@
 //user dashboard
-
 /*Imports*/
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getUser } from "../api"
 import * as jwtdecode from "jwt-decode"
-/*Variables*/
-
 
 export default function Dashboard(){
     //this should only be accessible to users that are signed in, and then display the data for ONLY that user.
