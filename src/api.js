@@ -34,6 +34,16 @@ export async function createUser(obj){
     
 }
 
+export async function CreateQuest(obj){
+    const response = await axios.post(`${URL}/AddQuest`, obj)
+    if(response.status === 200){
+        return response.data
+    }
+    else{
+        return response.statusText
+    }
+}
+
 export async function updateUser(id, obj){
     const response = await axios.put(`${URL}/Users${id}`, obj)
     if(response.status === 200){
@@ -70,3 +80,25 @@ export async function verifyUser(user){
 export async function getAllCreations(){
 
 }   
+
+export async function getAllBlogs(){
+    //equal to http:/localhost:3000/Blogs
+    const response = await axios.get(`${URL}/Blogs`)
+    if(response.status === 200){
+        return response.data
+    }
+    else{
+        //response = "Nope"
+        return response
+    }
+}
+
+export async function getBlogs(id){
+    const response = await axios.get(`${URL}/Blogs/${id}`)
+    if(response.status === 200){
+        return response.data
+    }
+    else{
+        return
+    }
+}

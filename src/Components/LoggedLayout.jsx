@@ -2,14 +2,8 @@
 import Navbar from "./Navbar";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import LoggedNavbar from "./LoggedNavbar";
 
-let nav = <Navbar />
-if(sessionStorage.getItem("User")){
-    nav = <LoggedNavbar />
-  }
-
-function Layout() 
+function LoggedLayout() 
 {
     //This function should represent the skeleton of the site per the tutorial, may be unnecessary
 /*
@@ -33,11 +27,11 @@ function Layout()
         //a admin key was not found or was invalid
         return(
             <>
-            {nav}
+            <Navbar />
             <Outlet />
             </>
         )
 }
 }
 
-export default Layout
+export default LoggedLayout

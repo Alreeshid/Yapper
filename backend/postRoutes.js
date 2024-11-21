@@ -28,7 +28,7 @@ postRoutes.route("/Users").get(verifyToken, async(request, response) => {//async
     }
 })
 
-//2 Retrieve one
+//2 Retrieve one user
 postRoutes.route("/Users/:id").get(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
     let data = await db.collection("Users").findOne({_id: new ObjectId(request.params.id)})
@@ -39,6 +39,90 @@ postRoutes.route("/Users/:id").get(verifyToken, async(request, response) => {//a
     else{
         throw new Error("Data was not found, or no fields found")
     }
+})
+//get one user creation based on ID
+postRoutes.route("/User_Quests/:id").get(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
+    let db = database.getDb()
+    let data = await db.collection("User_Quests").findOne({author: new ObjectId(request.params.id)})
+     
+    if(Object.keys(data).length >0){
+        response.json(data)//parses what's found a json data, for front end
+    }
+    else{
+        throw new Error("Data was not found, or no fields found")
+    }
+})
+
+//get all blog posts:
+postRoutes.route("/Blogs").get(async(request, response) => {//asynce makes it wait until we get data returned
+    let db = database.getDb()
+    let data = await db.collection("Blogs").find({}).toArray()
+    if(data.length > 0){
+        response.json(data)//parses what's found a json data, for front end
+    }
+    else{
+        throw new Error("Data was not found, or no fields found")
+    }
+})
+
+postRoutes.route("/Quests").get(async(request, response) => {//asynce makes it wait until we get data returned
+    let db = database.getDb()
+    let data = await db.collection("Quests").find({}).toArray()
+    if(data.length > 0){
+        response.json(data)//parses what's found a json data, for front end
+    }
+    else{
+        throw new Error("Data was not found, or no fields found")
+    }
+})
+
+//Get a specific blog post:
+postRoutes.route("/Blogs/:id").get(async(request, response) => {//asynce makes it wait until we get data returned
+    let db = database.getDb()
+    let data = await db.collection("Blogs").findOne({author: new ObjectId(request.params.id)})
+     
+    if(Object.keys(data).length >0){
+        response.json(data)//parses what's found a json data, for front end
+    }
+    else{
+        throw new Error("Data was not found, or no fields found")
+    }
+})
+
+// create a blog
+postRoutes.route("/Blogs").post(async(request, response) => {//asynce makes it wait until we get data returned
+    let db = database.getDb()
+    
+    let mongoObject = {
+        author: request.body.author,
+        href: "/Blogs: "+_id,
+        dateCreated: new Date(),
+        shortDesc: request.body.shortDesc,
+        readTime: request.body.readTime,
+        content: request.body.content
+    }
+    let data = await db.collection("Blogs").insertOne(mongoObject)
+    
+    response.json(data)
+
+})
+// create a official quest
+postRoutes.route("/AddQuest").post(async(request, response) => {//asynce makes it wait until we get data returned
+    let db = database.getDb()
+    
+    let body = request.body
+    let mongoObject = {
+        author: body.author,
+        questLength: body.questLength,
+        questType: body.questType,
+        dateCreated: new Date(),
+        quests: body.questList,
+        title: body.title
+    }
+    let data = await db.collection("Quests").insertOne(mongoObject)
+    
+    response.json(data)
+
 })
 
 //3 create one user

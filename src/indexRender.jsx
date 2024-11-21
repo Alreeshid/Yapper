@@ -2,6 +2,7 @@
 import { createRoot } from 'react-dom/client'
 
 import Navbar from './Components/Navbar'
+import LoggedNavbar from './Components/LoggedNavbar'
 import Layout from './Components/Layout'
 
 import Homepage from './Components/Homepage'
@@ -17,6 +18,11 @@ import Contact from './Pages/contact'
 import { useEffect } from 'react'
 import axios from 'axios'
 import Dashboard from './Pages/Dashboard'
+import ComCreations from './Pages/UserPages/ComCreations'
+import Creations from './Pages/UserPages/Creations'
+import Settings from './Pages/UserPages/Settings'
+import Blog from './Pages/UserPages/Blog'
+
 //potential for the community page in the future, maybe only if logged in
 
 
@@ -25,9 +31,11 @@ import Dashboard from './Pages/Dashboard'
 //for paths that require ids, use /pathLoc:id - with pathLoc being th page, such as an individual post
 
 //check if user Auth headers already exist on page load:
-let home = <Homepage/>
+let home = <Homepage />
+let navBar = <Navbar />
 if(sessionStorage.getItem("User")){
   home = <Dashboard />
+
 }
 
 createRoot(document.getElementById('root')).render(
@@ -51,11 +59,17 @@ createRoot(document.getElementById('root')).render(
         as its own element, while the Layout component is then filled in with whatever component it's been
         redirected to. Elements linked in the pageRouteData file are the only ones that are rendered on the
         navbar, meaning that elements can be added to this for secretive use.
+                <Route path='/Dashboard' element={<Dashboard />}></Route>
        */}
         <Route path="/Demo" element={<DemoPage />} />
         <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="/Login" element={<SignIn />} />
         <Route path='/DemoOutput' element={<DemoOutput />}></Route>
+        <Route path='/AccountSettings' element={<Settings />}></Route>
+        <Route path='/CommunityCreations' element={<ComCreations />}></Route>
+        <Route path='/Creations' element={<Creations />}></Route>
+        <Route path='/Blog' element={<Blog />}></Route>
       </Route>
 
 

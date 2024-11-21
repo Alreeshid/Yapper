@@ -1,8 +1,8 @@
 import { LoginComponent } from "../Components/LoginComponent"
 import { CreateUser } from "../Components/CreateUser"
 import { useState } from "react"
+//import LoggedNavbar from "@/Components/LoggedNavbar"
 
-import { Button } from "@/Components/ui/button"
 
 
 function SignIn() {
@@ -16,8 +16,9 @@ function SignIn() {
 
 
     return (
+        
         <div
-        className="flex justify-center items-center w-screen h-screen">
+        className="flex m-auto justify-center items-center w-screen h-screen">
             <br></br>
             
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -28,19 +29,19 @@ function SignIn() {
                 >
 
                     <LoginComponent />
-                    <Button variant=""
+                    <button className="px-6 text-sm text-center dark:text-gray-600"
                         onClick={changeLoginType}>Don't have an account? Create one now!
-                    </Button>
+                    </button>
                 </div>
                 :
                 <div
                 className="flex flex-col w-0.3"
                 >
                     <CreateUser />
-                    <Button
-                    className=""
+                    <button
+                    className="px-6 text-sm text-center dark:text-gray-600"
                     onClick={changeLoginType}>Already have an account? Click here to Login!
-                    </Button>
+                    </button>
 
                 </div>}
 
