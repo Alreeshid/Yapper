@@ -37,6 +37,9 @@
     "tailwindcss-animate": "^1.0.7",
     "tw-elements": "^2.0.0"
   },
+  "overrides": {
+    "typescript": "$typescript"
+  },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@tailwindcss/forms": "^0.5.9",
