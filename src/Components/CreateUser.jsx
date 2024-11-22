@@ -1,4 +1,4 @@
-import { createUser } from "../api"
+import { createUser } from "../api/api"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 

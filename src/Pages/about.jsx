@@ -1,7 +1,7 @@
 import Sidebar from "@/Components/Sidebar"
 import axios from "axios"
 import { shortList } from "@/Components/DataLists/ShortCharacterQuest"
-import { CreateQuest } from "@/api"
+import { CreateQuest } from "@/api/api"
 function About() 
 {
     

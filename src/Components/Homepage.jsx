@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Navbar from "./Navbar"
-import { getUsers } from '../api'
+import { getUsers } from '../api/api'
 
 //import "Common.css"
 
