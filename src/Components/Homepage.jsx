@@ -67,7 +67,7 @@ const [data, setPageData] = useState([])
                   className="block transform rounded-md bg-gray-200 px-5 py-2 text-center text-sm font-medium tracking-wider text-gray-700 transition-colors duration-300 hover:bg-gray-300 lg:mx-4"
                   href="/#About"
                   target="_self">
-                  Learn More About The Project
+                  Learn More About The Project Here
                 </a>
               </div>
             </div>
