@@ -1,5 +1,5 @@
 import axios from 'axios'
-const URL = "http:mongodb+srv://vercel-admin-user:3cLQ2Kw5Prdj39hv@yapper-storage.0jflx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const URL = "https://mongodb+srv://vercel-admin-user:3cLQ2Kw5Prdj39hv@yapper-storage.0jflx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 export async function getUsers(){
     //equal to http:/localhost:3000/Users
