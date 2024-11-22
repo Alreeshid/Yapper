@@ -2,13 +2,13 @@
 /*Imports*/
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { getUser } from "../api/api"
+import { getUser } from "../api"
 import * as jwtdecode from "jwt-decode"
 import Sidebar from "@/Components/Sidebar"
 import Changelog from "@/Components/Changelog"
 
 import { shortList } from "@/Components/DataLists/ShortCharacterQuest"
-import { CreateQuest } from "../api/api"
+import { CreateQuest } from "../api"
 
 export default function Dashboard() {
     //this should only be accessible to users that are signed in, and then display the data for ONLY that user.

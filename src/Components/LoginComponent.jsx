@@ -1,4 +1,4 @@
-import { verifyUser } from "../api/api"
+import { verifyUser } from "../api"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
