@@ -1,5 +1,5 @@
 import axios from 'axios'
-const URL = "vercel.com/alreeshids-projects/yapper/"
+const URL = "http://localhost:3000"
 
 export async function getUsers(){
     //equal to http:/localhost:3000/Users

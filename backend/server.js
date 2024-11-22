@@ -22,3 +22,5 @@ app.listen(PORT, () =>{
     connect.connectToServer()
     console.log(`Server is running on port ${PORT}`)//tilde key no shift 
 })
+
+module.exports = app;
