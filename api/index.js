@@ -1,11 +1,9 @@
-//uses functions from connect.cjs to make a LOCAL server instance
-//remember CRUD methodology, paths for Create,Read,Update,Delete
-const connect = require("./connect.cjs")
+const connect = require("../backend/connect.cjs")
 
 const express = require("express")
 const cors = require("cors")
 
-const routes = require("./postRoutes")
+const routes = require("../backend/postRoutes")
 // const demoData = require("./demoDataRoutes")
 
 const app = express()
