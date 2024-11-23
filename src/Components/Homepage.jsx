@@ -21,7 +21,7 @@ function Homepage() {
 
 const [data, setPageData] = useState([])
 
-/*
+
   useEffect(() =>{
       async function loadPageData(){
         const data = await getUsers()//placeholder for testing
@@ -31,7 +31,7 @@ const [data, setPageData] = useState([])
       }
       loadPageData()
   }, [])
-*/
+
   return (
     <>
     <div className="bg-stone-300">
@@ -48,7 +48,7 @@ const [data, setPageData] = useState([])
                 Yapper is a writing tool designed to help creatives come up with ideas for their writing, and to keep
                 their ideas consistent. Whether you're an experienced writer or simply want  to build up loose ideas,
                 Yapper is here to help!
-                  
+                  {data}
               </p>
               <div className="mt-6 flex flex-col space-y-3 lg:flex-row lg:space-y-0">
                 <a
