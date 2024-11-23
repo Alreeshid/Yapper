@@ -17,7 +17,7 @@ const bcrypt = require("bcrypt") //for encrypting user passwords
 
 //1 Retrieve all
 //http://localhost:3000/users
-postRoutes.route("/Users").get(async(request, response) => {//asynce makes it wait until we get data returned
+postRoutes.route("/Users").get(verifyToken, async(request, response) => {//asynce makes it wait until we get data returned
     let db = database.getDb()
     let data = await db.collection("Users").find({}).toArray()
     if(data.length > 0){
