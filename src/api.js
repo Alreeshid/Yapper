@@ -1,5 +1,5 @@
 import axios from 'axios'
-const URL = "http://localhost:3000"
+const URL = "10.255.8.119"
 
 export async function getUsers(){
     //equal to http:/localhost:3000/Users
