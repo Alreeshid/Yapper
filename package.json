@@ -11,6 +11,7 @@
   "dependencies": {
     "@vercel/kv": "^2.0.0",
     "autoprefixer": "^10.4.20",
+    "aws-amplify": "^6.10.0",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
@@ -41,6 +42,8 @@
     "typescript": "$typescript"
   },
   "devDependencies": {
+    "@aws-amplify/backend": "^1.8.0",
+    "@aws-amplify/backend-cli": "^1.4.2",
     "@eslint/js": "^9.8.0",
     "@tailwindcss/forms": "^0.5.9",
     "@types/node": "^22.9.0",
@@ -48,7 +51,8 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "@wixc3/react-board": "^3.0.1",
-    "aws-cdk": "^2.167.1",
+    "aws-cdk": "^2.171.1",
+    "aws-cdk-lib": "^2.171.1",
     "constructs": "^10.4.2",
     "esbuild": "^0.24.0",
     "eslint": "^9.8.0",
@@ -58,7 +62,7 @@
     "globals": "^15.9.0",
     "tailwindcss": "^3.4.13",
     "tsx": "^4.19.2",
-    "typescript": "^5.6.3",
+    "typescript": "^5.7.2",
     "vite": "^5.4.11"
   }
 }
